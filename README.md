@@ -1,7 +1,7 @@
 # Zok's ArcBtnBox
-This is a handwired 5/3 button arcade button controller that I made out of a random plastic box.
+This is a handwired 5 (or 3) button arcade button controller that I made out of a random plastic box.
 
-The internal dimensions of the box is about 80mm D x 110mm W x 33mm H.
+The internal dimensions of the box are about 80mm D x 110mm W x 33mm H.
 
 The controller was designed to use 5 buttons, but I only had 3 24mm buttons on hand, so it is what it is for now.
 
@@ -10,7 +10,7 @@ An Arduino Pro Micro type C variant was used with direct pin connection and inte
 ## Bill of Materials
 | Part                         | Details        | Quantity | Notes                                   |
 |------------------------------|----------------|----------|-----------------------------------------|
-| Sanwa arcade buttons         | 24mm           | 5 or 3   | Commonly available variant has [SW-68 switches](https://github.com/Zokhoi/Arcade-Switches/blob/master/doc/Switches.md#sanwa-sw-68),<br /> which uses 2.8mm lug connectors (#110タブ) |
+| Sanwa arcade buttons         | 24mm           | 5 (or 3) | Commonly available variant has [SW-68 switches](https://github.com/Zokhoi/Arcade-Switches/blob/master/doc/Switches.md#sanwa-sw-68),<br /> which uses 2.8mm lug connectors (#110タブ) |
 | Arduino Pro Micro            | Type C variant | 1        | I hate micro B connector with a passion |
 | Arduino Pro Micro headers    | 12-pin header  | 1        | Only one side of the microcontroller needs to be soldered with header       |
 | DuPont wires                 | Male-female    | Number of arcade buttons plus  1 | For connecting pins of microcontroller to buttons   |
@@ -56,6 +56,8 @@ On the wall of the side you have chosen, make a hole for the microcontroller USB
 ![Side](./img/side.png)
 
 Then make four holes for securing extra standoffs that would keep the microcontroller in place.
+
+If you would like the box to be extra secure, you can make 5 more holes and screw in the support pillars on the underside. You would need 5 more M2 screws and washers each.
 
 ![Bottom](./img/bottom.png)
 
