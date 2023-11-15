@@ -1,16 +1,13 @@
 #include "Arduino.h"
 #include "Keyboard.h"
 #include "string.h"
-
-#define KEY_NONE 0x00
-#define KEY_Q 0x71
-#define KEY_W 0x77
-#define KEY_E 0x65
+#include "keys.h"
 
 /* pins */
 int btnPins[5] = {10, 16, 14, 15, A0};
-int btnKeys[5] = {KEY_NONE, KEY_Q, KEY_W, KEY_E, KEY_NONE};
+int btnKeys[5] = {KEY_D, KEY_F, KEY_ENTR, KEY_J, KEY_K};
 
+/* buttons are active low */
 int prevState[5] = {1, 1, 1, 1, 1};
 int state[5] = {1, 1, 1, 1, 1};
 
