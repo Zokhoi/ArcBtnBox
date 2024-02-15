@@ -1,7 +1,7 @@
 # Zok's ArcBtnBox
 This is a handwired 5 button arcade button controller that I made out of a random plastic box.
 
-The internal dimensions of the box are about 80mm D x 110mm W x 33mm H.
+The internal dimensions of the box are about 110mm W x 80mm D x 33mm H.
 
 An Arduino Pro Micro type C variant was used with direct pin connection and internal pull-up resistors.
 
@@ -31,10 +31,12 @@ Five support pillars are used in my design to offset the force hitting on the ar
 ## Assembly
 
 Some tips:
-* 33mm is just barely deeper than commonly available Sanwa 24mm arcade buttons using SW-68 switches.
+* 33mm is just barely deeper than commonly available Sanwa 24mm arcade buttons using SW-68 switches, which is about 29mm deep when mounted on the plastic box lid, minus the plate thickness of ~1mm.
+  * A box like [this](https://item.taobao.com/item.htm?id=9425109598&ns=1&skuId=3605234230708) or [this](https://item.taobao.com/item.htm?id=644880553856&skuId=4815185538373) should be good <br />
+    ![plastic box dimensions](./img/plastic_box_dimensions.png)
 * The top plastic cover of the box measures about 1mm thick, which is usable for the arcade buttons requiring 1.2mm thick mounting plate.
 * Be careful drilling holes on plastic box as it might crack. Safer to use soldering iron to melt holes and then clean up the melted plastic using a utility knife with a long blade.
-* For all the screw holes, use the screws with washers to distribute the pressure around the plastic plate, instead of relying on the screw head.
+* For all the screw holes, use screws with washers or a large flat head to distribute the pressure around the plastic plate.
 * Choose a suitable length of DuPont wires with enough slack to route the wires, but not too much that it becomes hard to contain all the wires in the box. I used 20cm wires but 10cm might have worked better.
 * If you got soldering flux into the switches body and the buttons feel sticky, don't worry, you can open the arcade button and even the switches themselves to clean them. Alcohol works best to dissolve the flux.
 
