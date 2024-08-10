@@ -3,36 +3,38 @@
 #include "string.h"
 #include "keys.h"
 
+#define BUTTON_COUNT 5
+
 /* pins */
-int btnPins[5] = {10, 16, 14, 15, A0};
-int btnKeys[5] = {KEY_D, KEY_F, KEY_ENTR, KEY_J, KEY_K};
+int btnPins[BUTTON_COUNT] = {10, 16, 14, 15, A0};
+int btnKeys[BUTTON_COUNT] = {KEY_D, KEY_F, KEY_ENTR, KEY_J, KEY_K};
 
 /* buttons are active low */
-int prevState[5] = {1, 1, 1, 1, 1};
-int state[5] = {1, 1, 1, 1, 1};
+int prevState[BUTTON_COUNT] = {1, 1, 1, 1, 1};
+int state[BUTTON_COUNT] = {1, 1, 1, 1, 1};
 
 /* timer interrupt to check keypress */
 ISR(TIMER3_COMPA_vect) {
-  for (size_t i = 0; i < 5; i++) {
+  for (size_t i = 0; i < BUTTON_COUNT; i++) {
     state[i] = digitalRead(btnPins[i]);
   }
   
   TXLED0; /* disable TX LED on any key event sent to computer */
-  for (size_t i = 0; i < 5; i++) {
-    if (prevState[i] != state[i] && btnKeys[i]!=KEY_NONE) {
+  for (size_t i = 0; i < BUTTON_COUNT; i++) {
+    if (prevState[i] != state[i] && btnKeys[i] != KEY_NONE) {
       if (state[i]) Keyboard.release(btnKeys[i]);
       else Keyboard.press(btnKeys[i]);
     }
   }
   TXLED0; /* disable TX LED on any key event sent to computer */
 
-  memcpy(prevState, state, 5*sizeof(int));
+  memcpy(prevState, state, BUTTON_COUNT*sizeof(int));
 }
 
 void setup() {
   cli(); /* disable global interrupts */
 
-  for (size_t i = 0; i < 5; i++) {
+  for (size_t i = 0; i < BUTTON_COUNT; i++) {
     pinMode(btnPins[i], INPUT_PULLUP);
   }
 
